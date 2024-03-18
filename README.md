@@ -57,8 +57,8 @@ untuk mengaktifkan mode debugging, kita harus mengubah environment variable **CI
   - Setelah muncul tampilan seperti diatas maka server sudah aktif, lalu coba buka web browser dan arahkan ke alamat http://localhost:8080 dan kemudian hasilnya akan seperti dibawah ini yang berarti CI 4 sudah berhasil di install.
   ![image](https://github.com/astridnadiaa/Tugas1_PBF/assets/134594070/45b16db9-547f-4ba9-82d6-aed662e6d75e)
 
-## 3. Bangun Aplikasi Pertama
-### **Static Pages**
+## Bangun Aplikasi Pertama
+### **3. Static Pages**
 #### **Setting Routing Rules**
 Routing mengaitkan URL dengan controller's method. COntroller adalah sebuah class yang mrmbantu mendelegasikan pekerjaan.
 - Buka file routes yang terletak pada **app/Config/Routes.php**
@@ -127,7 +127,7 @@ Class Pages memperluas BaseController class yang memperluas CodeIgniter\Controll
 Header berisi kode HTML dasar yang ingin Anda tampilkan sebelum memuat view utama, bersama dengan title. Ini juga akan menampilkan $title variabel, yang akan kita definisikan nanti di Controller.
 - Buat file footer.php pada folder **app/Views/templates**
 ```shell
-    <em>&copy; 2022</em>
+    <em>&copy; 2024</em>
 </body>
 </html>
 ```
@@ -201,9 +201,21 @@ class Pages extends BaseController
   localhost:8080/home
   ```
 
-![image](https://github.com/astridnadiaa/Tugas1_PBF/assets/134594070/7f59bb62-9e7b-4e9c-b711-60db86071447)
+  ![image](https://github.com/astridnadiaa/Tugas1_PBF/assets/134594070/4ad04838-5e9f-41c5-84b8-647dada9b851)
+
 - About Page
   ```shell
   localhost:8080/about
   ```
-  ![image](https://github.com/astridnadiaa/Tugas1_PBF/assets/134594070/df7ecc71-aab9-4e32-bd73-dd4c1e4a8d8c)
+  ![image](https://github.com/astridnadiaa/Tugas1_PBF/assets/134594070/0fa48abc-49f2-4c6b-b5db-faf295149249)
+
+## CodeIgniter4 Overview
+### **4. Models, Views, Controller**
+#### **Apa itu MVC**
+Model View Controller (MVC) adalah sebuah pola arsitektur dalam membuat sebuah aplikasi dengan cara memisahkan kode menjadi tiga bagian yang terdiri dari:
+  1. Model
+     Bagian yang bertugas untuk menyiapkan, mengatur, memanipulasi, dan mengorganisasikan data yang ada di database.
+  2. View
+     Bagian yang bertugas untuk menampilkan informasi dalam bentuk Graphical User Interface (GUI).
+  3. Controller
+     Bagian yang bertugas untuk menghubungkan serta mengatur model dan view agar dapat saling terhubung.
