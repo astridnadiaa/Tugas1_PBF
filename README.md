@@ -82,3 +82,31 @@ $routes->get('(:segment)', [Pages::class, 'view;]);
 - CodeIgniter membaca routing rules dari atas ke bawah dan mengarahkan request ke rule pertama yang memenuhi. Ketika sebuah request masuk, maka CI mencari kecocokan pertama dan memanggil controller dan method yang sesuai. mungkin juga menggunakan argumen.
 - kemudian rule kedua dalam $routes akan membuat jalur yang metode request nya **get** dan **/** artinya route diarahkan ke controller pages method nya index
 - Lalu rule ketiga dalam $routes akan membuat jalur yang metode request nya **get** dan **/** artinya route diarahkan ke controller pages method nya view
+#### **Buat Controllers Pertama**
+##### **Create Controller Pages**
+- Buat file Pages.php pada **app/Controllers**
+
+  ![image](https://github.com/astridnadiaa/Tugas1_PBF/assets/134594070/39d6daec-d886-4728-8e7d-a226f1cd7f28)
+- kemudian masuk ke **app/Controllers/Pages.php** dan buat class dengan syntax :
+```shell
+<?php
+
+namespace App\Controllers;
+
+class Pages extends BaseController
+{
+    public function index()
+    {
+        return view('welcome_message');
+    }
+
+    public function view($page = 'home')
+    {
+        // ...
+    }
+}
+```
+setelah membuat kelas bernama **Pages**, dengan **view()** method yang menerima satu argumen bernama **$page**. Ia juga memiliki **index()** method, sama dengan default controller yang ditemukan di **app/Controllers/Home.php ; ** method itu menampilkan CodeIgniter welcome page.
+Class Pages memperluas BaseController class yang memperluas CodeIgniter\Controller class. Ini berarti bahwa kelas Pages baru dapat mengakses metode dan properti yang ditentukan dalam CodeIgniter\Controller class ( **system/Controller.php** ).
+Controller inilah yang akan menjadi pusat dari setiap request pada aplikasi web. Seperti kelas PHP lainnya, Anda menyebutnya di dalam Controllers Anda sebagai **$this**.
+##### **Create Views**
