@@ -210,7 +210,33 @@ class Pages extends BaseController
   ![image](https://github.com/astridnadiaa/Tugas1_PBF/assets/134594070/0fa48abc-49f2-4c6b-b5db-faf295149249)
 
 ## CodeIgniter4 Overview
-### **4. Models, Views, Controller**
+### **4. Struktur Aplikasi**
+#### **Default Directories**
+**App**
+Direktori **app** adalah tempat semua kode aplikasi Anda berada. CodeIgniter 4 hadir dengan struktur direktori default yang berfungsi dengan baik untuk banyak aplikasi. Folder berikut membentuk konten dasar:
+![image](https://github.com/astridnadiaa/Tugas1_PBF/assets/134594070/02a0bee2-5acc-4c4c-8624-471c967fea68)
+Semua file dalam direktori ini berada di bawah App namespace, meskipun Anda bebas mengubahnya di **app/Config/Constants.php**.
+
+**System**
+Direktori ini menyimpan file-file yang membentuk kerangka itu sendiri. Meskipun Anda memiliki banyak fleksibilitas dalam cara menggunakan direktori aplikasi, file dalam direktori sistem tidak boleh diubah. Sebaliknya, Anda harus memperluas kelas, atau membuat kelas baru, untuk menyediakan fungsionalitas yang diinginkan.
+
+Semua file dalam direktori ini berada di bawah **CodeIgniter** namespace.
+
+**Public**
+Folder public menampung bagian aplikasi web Anda yang dapat diakses browser, mencegah akses langsung ke kode sumber Anda. Ini berisi file **.htaccess** utama , **index.php** , dan aset aplikasi apa pun yang Anda tambahkan, seperti CSS, javascript, atau gambar.
+
+Folder ini dimaksudkan sebagai “root web” situs Anda, dan server web Anda akan dikonfigurasi untuk mengarah ke folder tersebut.
+
+**Writable**
+Direktori ini menampung semua direktori yang mungkin perlu ditulisi selama masa pakai aplikasi. Ini termasuk direktori untuk menyimpan file cache, log, dan unggahan apa pun yang mungkin dikirim pengguna. Anda harus menambahkan direktori lain tempat aplikasi Anda perlu menulis di sini. Hal ini memungkinkan Anda untuk menjaga direktori utama lainnya tidak dapat ditulisi sebagai langkah keamanan tambahan.
+
+**Test**
+Direktori ini disiapkan untuk menyimpan file pengujian Anda. Direktori ini **_support** menampung berbagai kelas tiruan dan utilitas lain yang dapat Anda gunakan saat menulis pengujian Anda. Direktori ini tidak perlu ditransfer ke server produksi Anda.
+
+**Modifying Directory Locations**
+Jika Anda telah memindahkan salah satu direktori utama, Anda dapat mengubah pengaturan konfigurasi di dalam **app/Config/Paths.php** .
+
+### **5. Models, Views, Controller**
 #### **Apa itu MVC**
 Model View Controller (MVC) adalah sebuah pola arsitektur dalam membuat sebuah aplikasi dengan cara memisahkan kode menjadi tiga bagian yang terdiri dari:
   1. Model
