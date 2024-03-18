@@ -107,6 +107,66 @@ class Pages extends BaseController
 }
 ```
 setelah membuat kelas bernama **Pages**, dengan **view()** method yang menerima satu argumen bernama **$page**. Ia juga memiliki **index()** method, sama dengan default controller yang ditemukan di **app/Controllers/Home.php ; ** method itu menampilkan CodeIgniter welcome page.
-Class Pages memperluas BaseController class yang memperluas CodeIgniter\Controller class. Ini berarti bahwa kelas Pages baru dapat mengakses metode dan properti yang ditentukan dalam CodeIgniter\Controller class ( **system/Controller.php** ).
-Controller inilah yang akan menjadi pusat dari setiap request pada aplikasi web. Seperti kelas PHP lainnya, Anda menyebutnya di dalam Controllers Anda sebagai **$this**.
+Class Pages memperluas BaseController class yang memperluas CodeIgniter\Controller class.Ini berarti bahwa kelas Pages baru dapat mengakses metode dan properti yang ditentukan dalam CodeIgniter\Controller class ( **system/Controller.php** ).
+  Controller inilah yang akan menjadi pusat dari setiap request pada aplikasi web. Seperti kelas PHP lainnya, Anda menyebutnya di dalam Controllers Anda sebagai **$this**.
 ##### **Create Views**
+- Buat file header.php pada folder **app/Views/templates**
+![image](https://github.com/astridnadiaa/Tugas1_PBF/assets/134594070/fffe2ef5-fe4a-4ffe-8696-b8c81e8ddafb)
+
+- tambahkan syntax berikut :
+```shell
+<!doctype html>
+<html>
+<head>
+    <title>Tugas1 PBF</title>
+</head>
+<body>
+
+    <h1><?= esc($title) ?></h1>
+```
+Header berisi kode HTML dasar yang ingin Anda tampilkan sebelum memuat view utama, bersama dengan title. Ini juga akan menampilkan $title variabel, yang akan kita definisikan nanti di Controller.
+- Buat file footer.php pada folder **app/Views/templates**
+```shell
+    <em>&copy; 2022</em>
+</body>
+</html>
+```
+#### **Menambahkan Logika ke Controller**
+##### **Create home.php dan about.php**
+Sebelumnya Anda menyiapkan pengontrol dengan suatu **view()** method. method ini menerima satu parameter, yaitu nama halaman yang akan dimuat.
+
+Badan halaman statis akan ditempatkan di direktori **app/Views/pages** .
+Di direktori itu, buat dua file bernama **home.php** dan **about.php** . Di dalam file tersebut, ketikkan beberapa teks - apa pun.
+- home.php
+  ```shell
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tugas1 PBF</title>
+    </head>
+  <body>
+  <h1>Ini View Home Page</h1>
+  </body>
+  </html>
+```
+
+![image](https://github.com/astridnadiaa/Tugas1_PBF/assets/134594070/7f59bb62-9e7b-4e9c-b711-60db86071447)
+
+- about.php
+  ```shell
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tugas1 PBF</title>
+    </head>
+  <body>
+  <h1>Ini View About Page</h1>
+  </body>
+</html>
+```
+
+  ![image](https://github.com/astridnadiaa/Tugas1_PBF/assets/134594070/df7ecc71-aab9-4e32-bd73-dd4c1e4a8d8c)
