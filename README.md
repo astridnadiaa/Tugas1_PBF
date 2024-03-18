@@ -5,6 +5,7 @@
   Framework merupakan suatu kerangka kerja yang dipakai dalam pengembangan situs web.
 ## Pengertian codeigniter
   Codeigniter adalah kerangka pengembangan aplikasi atau sebuah toolkit, untuk memudahkan orang-orang yang membangun situs web menggunakan PHP.
+  
 ## Instalasi
 ## **1. Instalasi Composer**
 - Start all Laragon lalu masuk ke terminal laragon yang sudah otomatis masuk ke root.
@@ -12,15 +13,15 @@
   ```shell
   composer create-project codeigniter4/appstarter PBF_Tugas1
   ```
-  #### **Konfigurasi Awal**
+  #### **2. Konfigurasi Awal**
   - Upgrading : untuk mendapatkan update/rilis baru, maka kita dapat menggunakan syntax :
     ```shell
     composer update
     ```
 
-## **2. Jalankan Server**
+## **Jalankan Server**
 ### **Konfigurasi Awal**
-#### **Konfigurasi URL**
+#### **3. Konfigurasi URL**
 Buka file app/Config/App.php dengan editor teks.
 - $baseURL : ubah base URL menjadi **$baseURL**. Jika memerlukan lebih banyak fleksibilitas, baseURL dapat di atur dalam file **.env** yaitu **app.baseURL = 'http://localhost:8080'**
   
@@ -32,7 +33,7 @@ Buka file app/Config/App.php dengan editor teks.
   ![image](https://github.com/astridnadiaa/Tugas1_PBF/assets/134594070/5ae7ca30-c89b-4581-87ad-35ba288d1953)
 
 
-#### **Mengatur ke mode Development**
+#### **4. Mengatur ke mode Development**
 untuk mengaktifkan mode debugging, kita harus mengubah environment variable **CI_ENVIRONMENT** menjadi **development** yang ada pada file .env
 - Sebelum
 
@@ -58,7 +59,7 @@ untuk mengaktifkan mode debugging, kita harus mengubah environment variable **CI
   ![image](https://github.com/astridnadiaa/Tugas1_PBF/assets/134594070/45b16db9-547f-4ba9-82d6-aed662e6d75e)
 
 ## Bangun Aplikasi Pertama
-### **3. Static Pages**
+### **5. Static Pages**
 #### **Setting Routing Rules**
 Routing mengaitkan URL dengan controller's method. COntroller adalah sebuah class yang mrmbantu mendelegasikan pekerjaan.
 - Buka file routes yang terletak pada **app/Config/Routes.php**
@@ -236,7 +237,7 @@ Direktori ini disiapkan untuk menyimpan file pengujian Anda. Direktori ini **_su
 **Modifying Directory Locations**
 Jika Anda telah memindahkan salah satu direktori utama, Anda dapat mengubah pengaturan konfigurasi di dalam **app/Config/Paths.php** .
 
-### **5. Models, Views, Controller**
+### **6. Models, Views, Controller**
 #### **Apa itu MVC**
 Model View Controller (MVC) adalah sebuah pola arsitektur dalam membuat sebuah aplikasi dengan cara memisahkan kode menjadi tiga bagian yang terdiri dari:
   1. Model
