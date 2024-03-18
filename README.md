@@ -150,10 +150,7 @@ Di direktori itu, buat dua file bernama **home.php** dan **about.php** . Di dala
   <h1>Ini View Home Page</h1>
   </body>
   </html>
-```
-
-![image](https://github.com/astridnadiaa/Tugas1_PBF/assets/134594070/7f59bb62-9e7b-4e9c-b711-60db86071447)
-
+  ```
 - about.php
   ```shell
   <!DOCTYPE html>
@@ -169,4 +166,44 @@ Di direktori itu, buat dua file bernama **home.php** dan **about.php** . Di dala
 </html>
 ```
 
+##### **Complete Pages::view() Method**
+Untuk memuat halaman tersebut, kita harus memeriksa apakah halaman yang diminta benar-benar ada. Ini adalah syntax method **view()** pada **Pages** controller yang dibuat di atas:
+```shell
+<?php
+
+namespace App\Controllers;
+
+use CodeIgniter\Exceptions\PageNotFoundException; // Add this line
+
+class Pages extends BaseController
+{
+    // ...
+
+    public function view($page = 'home')
+    {
+        if (! is_file(APPPATH . 'Views/pages/' . $page . '.php')) {
+            // Whoops, we don't have a page for that!
+            throw new PageNotFoundException($page);
+        }
+
+        $data['title'] = ucfirst($page); // Capitalize the first letter
+
+        return view('templates/header', $data)
+            . view('pages/' . $page)
+            . view('templates/footer');
+    }
+}
+```
+
+#### **Menjalankan Aplikasi**
+- Home Page
+  ```shell
+  localhost:8080/home
+  ```
+
+![image](https://github.com/astridnadiaa/Tugas1_PBF/assets/134594070/7f59bb62-9e7b-4e9c-b711-60db86071447)
+- About Page
+  ```shell
+  localhost:8080/about
+  ```
   ![image](https://github.com/astridnadiaa/Tugas1_PBF/assets/134594070/df7ecc71-aab9-4e32-bd73-dd4c1e4a8d8c)
