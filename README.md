@@ -60,4 +60,25 @@ untuk mengaktifkan mode debugging, kita harus mengubah environment variable **CI
 ## 3. Bangun Aplikasi Pertama
 ### **Static Pages**
 #### **Setting Routing Rules**
+Routing mengaitkan URL dengan controller's method. COntroller adalah sebuah class yang mrmbantu mendelegasikan pekerjaan.
+- Buka file routes yang terletak pada **app/Config/Routes.php**
+- satu-satunya routes untuk start adalah :
+```shell
+  <?php
+  use CodeIgniter\Router\RouteCollection;
+  /**
+  @var RouteCollection $routes
+  /
+  $routes->get('/', 'Home::index');
+```
+Syntax diatas akan membuat jalur dengan metode request nya **get** dan **/** artinya route diarahkan ke controller **home** method nya **index**
+- tambahkan baris berikut, setelah arahan route untuk **'/'**
+```shell
+use APP\Controllers\Pages;
 
+$routes->get('pages', [Pages::class, 'index;]);
+$routes->get('(:segment)', [Pages::class, 'view;]);
+```
+- CodeIgniter membaca routing rules dari atas ke bawah dan mengarahkan request ke rule pertama yang memenuhi. Ketika sebuah request masuk, maka CI mencari kecocokan pertama dan memanggil controller dan method yang sesuai. mungkin juga menggunakan argumen.
+- kemudian rule kedua dalam $routes akan membuat jalur yang metode request nya **get** dan **/** artinya route diarahkan ke controller pages method nya index
+- Lalu rule ketiga dalam $routes akan membuat jalur yang metode request nya **get** dan **/** artinya route diarahkan ke controller pages method nya view
